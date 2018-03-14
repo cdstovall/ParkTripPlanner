@@ -1,0 +1,21 @@
+@(territories : List[TerritoryDetail])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Territories</h1>
+<table>
+@for(territory <- territories){
+    <tr>
+        <td>@territory.getTerritoryId()</td>
+        <td>@territory.getTerritoryDescription()</td>
+        <td>@territory.getRegionId()</td>
+        <td>@territory.getRegionDescription()</td>
+    </tr>
+}
+</table>
+</body>
+</html>
