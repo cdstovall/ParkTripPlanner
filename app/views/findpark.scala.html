@@ -1,0 +1,31 @@
+@(activities : List[Activity])
+@import helper._
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find a Park</title>
+</head>
+<body>
+<h1>What would you like to do?</h1>
+
+
+<form method="POST" action="parkResults">
+    @CSRF.formField
+
+<table>
+    @for(activity <- activities){
+    <tr>
+        <td><input type="checkbox" name="activityId[]" value="@activity.getActivityId()">@activity.getActivityName<br></td>
+    </tr>
+    }
+</table>
+
+    <input type="submit" value="Get Parks">
+
+</form>
+
+
+</body>
+</html>

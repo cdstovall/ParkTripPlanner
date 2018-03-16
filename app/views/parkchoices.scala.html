@@ -1,0 +1,22 @@
+@(parks : List[Park])
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Park Choices</title>
+</head>
+<body>
+
+<table>
+    @for(park <- parks){
+    <tr>
+        <td>@park.getParkName<br></td>
+    </tr>
+    }
+</table>
+
+
+
+</body>
+</html>

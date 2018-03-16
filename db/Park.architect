@@ -106,7 +106,7 @@
     <folder id="FOLTAB192" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB194" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX26" populated="true" UUID="c197c076-6381-47d8-8e98-88e49312991e" clustered="false" name="TripId" physicalName="TripId" primaryKeyIndex="true" unique="false" >
+    <index id="IDX26" populated="true" UUID="c197c076-6381-47d8-8e98-88e49312991e" clustered="false" name="TripId" physicalName="tripid" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC27" populated="true" UUID="fcdf46ea-7db4-4974-8376-86df04060145" ascendingOrDescending="UNSPECIFIED" column-ref="COL20" name="TripId" physicalName="TripId" />
     </index>
    </folder>
@@ -126,7 +126,7 @@
     <folder id="FOLTAB282" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB284" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX31" populated="true" UUID="b0114327-c12e-4c60-9df0-3cc0bf97f517" clustered="false" name="ParkUser_pk" physicalName="ParkUser_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX31" populated="true" UUID="b0114327-c12e-4c60-9df0-3cc0bf97f517" clustered="false" name="ParkUser_pk" physicalName="parkuser_pk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC32" populated="true" UUID="f5a59c82-87a9-4256-8718-52eb274ee93e" ascendingOrDescending="UNSPECIFIED" column-ref="COL29" name="UserId" physicalName="UserId" />
     </index>
    </folder>
@@ -135,13 +135,13 @@
    <relationship id="REL33" populated="true" UUID="23cca679-e26f-4a4c-81e6-b5f14b8460bb" deferrability="7" deleteRule="3" fk-table-ref="TAB13" fkCardinality="7" identifying="false" name="Park_ParkActivity_fk" physicalName="park_parkactivity_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP34" populated="true" UUID="b6035ae6-da8a-4f9c-aaad-32b34b12a5bd" fk-column-ref="COL15" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL35" populated="true" UUID="4ad4f2c8-4130-4957-a2e5-736c6e2d4b46" deferrability="7" deleteRule="3" fk-table-ref="TAB19" fkCardinality="7" identifying="false" name="Park_Trip_fk" physicalName="Park_Trip_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+   <relationship id="REL35" populated="true" UUID="4ad4f2c8-4130-4957-a2e5-736c6e2d4b46" deferrability="7" deleteRule="3" fk-table-ref="TAB19" fkCardinality="7" identifying="false" name="Park_Trip_fk" physicalName="park_trip_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP36" populated="true" UUID="1de60410-2a15-46e3-a68f-5e209be65a0f" fk-column-ref="COL21" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
    <relationship id="REL37" populated="true" UUID="719fc7e7-4ce5-4929-978a-dfd5e0d2f391" deferrability="7" deleteRule="3" fk-table-ref="TAB13" fkCardinality="7" identifying="false" name="Activity_ParkActivity_fk" physicalName="activity_parkactivity_fk" pk-table-ref="TAB8" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP38" populated="true" UUID="202832fb-ab9b-4dca-a879-6f3c6acd9cd6" fk-column-ref="COL16" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL9" />
    </relationship>
-   <relationship id="REL39" populated="true" UUID="a89e88c2-9e1b-4899-b868-20a168db0ba8" deferrability="7" deleteRule="3" fk-table-ref="TAB19" fkCardinality="7" identifying="false" name="ParkUser_Trip_fk" physicalName="ParkUser_Trip_fk" pk-table-ref="TAB28" pkCardinality="2" updateRule="3" >
+   <relationship id="REL39" populated="true" UUID="a89e88c2-9e1b-4899-b868-20a168db0ba8" deferrability="7" deleteRule="3" fk-table-ref="TAB19" fkCardinality="7" identifying="false" name="ParkUser_Trip_fk" physicalName="parkuser_trip_fk" pk-table-ref="TAB28" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP40" populated="true" UUID="d5f2f108-4d5e-47cd-8ed8-21d27f253659" fk-column-ref="COL22" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL29" />
    </relationship>
   </relationships>
@@ -153,8 +153,8 @@
   <table-pane table-ref="TAB1" x="408" y="107" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB8" x="772" y="227" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB13" x="516" y="443" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB19" x="33" y="202" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB28" x="48" y="43" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB19" x="95" y="298" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB28" x="24" y="114" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-link relationship-ref="REL33" pkConnection="0.6912280701754386" fkConnection="0.3542319749216301" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL37" pkConnection="0.4885245901639344" fkConnection="0.5110410094637224" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL35" pkConnection="0.7739130434782608" fkConnection="0.13333333333333333" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
