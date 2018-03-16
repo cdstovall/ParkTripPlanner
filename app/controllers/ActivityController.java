@@ -34,7 +34,7 @@ public class ActivityController extends Controller
                 createQuery("SELECT a FROM Activity a")
                 .getResultList();
 
-        return ok(views.html.findpark.render(activities));
+        return ok(views.html.findparks.render(activities));
     }
 
     @Transactional(readOnly = true)
@@ -63,7 +63,7 @@ public class ActivityController extends Controller
         List<Park> parks = jpaApi.em().createQuery(sql).setParameter("activityIds", activityIdValues).
                 setParameter("activityRequestLength", requestSize).getResultList();
 
-        return ok("" + parks.size());
+        return ok(views.html.parkchoices.render(parks));
 
     }
 

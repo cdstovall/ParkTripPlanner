@@ -4,7 +4,9 @@
 
 GET     /territories                controllers.TerritoryController.getTerritories
 
-GET     /findparks                   controllers.ActivityController.getActivities()
+GET     /findparks                  controllers.ActivityController.getActivities()
+
+GET     /park/:id                   controllers.ParkController.getPark(id:Integer)
 
 POST    /parkResults                controllers.ActivityController.postActivitySearchResults()
 

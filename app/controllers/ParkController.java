@@ -19,16 +19,13 @@ public class ParkController extends Controller
         this.jpaApi = jpaApi;
     }
 
-/*
-    @Transactional
-    public Result getParks()
+    @Transactional (readOnly = true)
+    public Result getPark(int parkId)
     {
-        List<Park> parks = jpaApi.
-                em().
-                createQuery("SELECT p FROM Park p")
-                .getResultList();
+        Park park = jpaApi.em().createQuery("SELECT p FROM Park p WHERE parkId = :parkId", Park.class).
+                setParameter("parkId", parkId).getSingleResult();
 
-        return ok(views.html.findpark.render(parks));
+        return ok(views.html.park.render(park));
     }
-*/
+
 }

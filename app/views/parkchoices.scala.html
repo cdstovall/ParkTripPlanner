@@ -11,7 +11,7 @@
 <table>
     @for(park <- parks){
     <tr>
-        <td>@park.getParkName<br></td>
+        <td><a href="park/@park.getParkId()">@park.getParkName()</a><br></td>
     </tr>
     }
 </table>
