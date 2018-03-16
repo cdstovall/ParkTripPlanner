@@ -50,7 +50,6 @@ public class ActivityController extends Controller
             activityIdValues.add(new Integer(activityId));
         }
 
-        //TODO Join Park and Activity to return parks with the selected activities
         String sql = "SELECT p " +
                 "FROM Park p " +
                 "JOIN ParkActivity pa ON pa.parkId = p.parkId " +
