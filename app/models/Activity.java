@@ -7,12 +7,12 @@ import javax.persistence.Id;
 public class Activity
 {
     @Id
-    private int ActivityId;
+    private int activityId;
     private String activityName;
 
     public int getActivityId()
     {
-        return ActivityId;
+        return activityId;
     }
 
     public String getActivityName()

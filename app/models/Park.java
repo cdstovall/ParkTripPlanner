@@ -13,6 +13,8 @@ public class Park
     private String parkName;
     private BigDecimal latitude;
     private BigDecimal longitude;
+    private String website;
+    private byte[] picture;
 
     public int getParkId()
     {
@@ -32,5 +34,15 @@ public class Park
     public BigDecimal getLongitude()
     {
         return longitude;
+    }
+
+    public String getWebsite()
+    {
+        return website;
+    }
+
+    public byte[] getPicture()
+    {
+        return picture;
     }
 }

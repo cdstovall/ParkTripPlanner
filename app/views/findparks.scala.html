@@ -17,7 +17,7 @@
 <table>
     @for(activity <- activities){
     <tr>
-        <td><input type="checkbox" name="activityId[]" value="@activity.getActivityId()">@activity.getActivityName<br></td>
+        <td><input type="checkbox" name="activityId[]" value="@activity.getActivityId()">@activity.getActivityName()<br></td>
     </tr>
     }
 </table>

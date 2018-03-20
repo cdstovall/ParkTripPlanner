@@ -1,4 +1,4 @@
-name := """play-java-db-example"""
+name := """parktripplanner"""
 
 version := "1.0-SNAPSHOT"
 
@@ -15,6 +15,15 @@ libraryDependencies += javaJpa
 libraryDependencies += javaJdbc
 libraryDependencies += "org.hibernate" % "hibernate-core" % "5.2.14.Final"
 libraryDependencies += "org.mariadb.jdbc" % "mariadb-java-client" % "2.2.2"
+
+// GUI
+libraryDependencies ++= Seq(
+  "org.webjars" %% "webjars-play" % "2.6.3",
+  "org.webjars" % "bootstrap" % "3.3.7-1" exclude("org.webjars", "jquery"),
+  "org.webjars" % "jquery" % "3.2.1"
+)
+
+libraryDependencies += "org.webjars" % "chartjs" % "2.7.0"
 
 // Testing libraries for dealing with CompletionStage...
 libraryDependencies += "org.assertj" % "assertj-core" % "3.6.2" % Test
