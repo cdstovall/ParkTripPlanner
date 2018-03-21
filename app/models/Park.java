@@ -10,6 +10,7 @@ public class Park
 {
     @Id
     private int parkId;
+    private int typeId;
     private String parkName;
     private BigDecimal latitude;
     private BigDecimal longitude;
@@ -19,6 +20,11 @@ public class Park
     public int getParkId()
     {
         return parkId;
+    }
+
+    public int getTypeId()
+    {
+        return typeId;
     }
 
     public String getParkName()

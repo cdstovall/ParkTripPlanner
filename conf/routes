@@ -7,11 +7,12 @@ GET     /territories                controllers.TerritoryController.getTerritori
 GET     /findparks                  controllers.ActivityController.getActivities()
 
 GET     /park/:id                   controllers.ParkController.getPark(id:Integer)
+GET     /parkPicture/:id            controllers.ParkController.getPicture(id:Integer)
 
 POST    /parkResults                controllers.ActivityController.postActivitySearchResults()
 
 GET     /activitychart              controllers.ChartController.getActivityChart()
-GET     /chart                      controllers.ChartController.getChart()
+GET     /chart                      controllers.ChartController.getTypeChart()
 
 
 # Map static resources from the /public folder to the /assets URL path

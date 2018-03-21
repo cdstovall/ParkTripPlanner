@@ -1,4 +1,4 @@
-@(park : Park)
+@(park : Park, parkActivities : List[Activity])
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,16 +12,22 @@
 
 <h2>Things to do at @park.getParkName():</h2>
 
+<table>
+    @for(parkActivity <- parkActivities){
+    <tr>
+        <td>@parkActivity.getActivityName()<br></td>
+    </tr>
+    }
+</table><br>
+
+<img src="/parkPicture/@park.getParkId()" width="250" />
 
 
-
-
-
-<p>
+<br><p>
     Park Website: <a href="@park.getWebsite()" @park.getWebsite()>@park.getWebsite()</a>
 </p>
 
-
+<input type="submit" value="Visit @park.getParkName()">
 
 </body>
 </html>

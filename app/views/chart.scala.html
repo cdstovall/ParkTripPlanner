@@ -1,19 +1,34 @@
+@(typeCounts : List[TypeCount])
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Chart</title>
+
     <script src="assets/lib/chartjs/chart.js"></script>
+
 </head>
 <body>
 
+<p>
+    @for(typeCount <- typeCounts){
+    @typeCount.getLabel()
+    }
+</p>
+
 <h1>Here is my chart</h1>
+
+
 <div id="canvas-holder" style="width:40%">
     <canvas id="myChart"></canvas>
 </div>
 <script type="text/javascript" src="assets/javascripts/mychart.js"></script>
 
-
+<script type="text/javascript" src="assets/javascripts/mychart.js" id="typeChartData"
+        data-labels="@for(i <- 0 to typeCounts.size() - 1){@typeCounts.get(i).getLabel() @if(i < typeCounts.size() - 1){,}}"
+        data-data="@for(i <- 0 to typeCounts.size() - 1){@typeCounts.get(i).getCount() @if(i < typeCounts.size() - 1){,}}"
+></script>
 
 </body>
 </html>

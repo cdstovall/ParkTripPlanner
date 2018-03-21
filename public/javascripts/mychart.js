@@ -1,11 +1,15 @@
+var labels = document.getElementById("typeChartData").getAttribute("data-labels").split(",");
+var data = document.getElementById("typeChartData").getAttribute("data-data").split(",");
+
+
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: labels,
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Park Types',
+            data: data,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
