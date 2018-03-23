@@ -15,7 +15,7 @@ public class Park
     private BigDecimal latitude;
     private BigDecimal longitude;
     private String website;
-    private byte[] picture;
+    //private byte[] picture;
 
     public int getParkId()
     {
@@ -47,8 +47,10 @@ public class Park
         return website;
     }
 
+    /*
     public byte[] getPicture()
     {
         return picture;
     }
+    */
 }

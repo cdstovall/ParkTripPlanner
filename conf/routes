@@ -7,7 +7,8 @@ GET     /territories                controllers.TerritoryController.getTerritori
 GET     /findparks                  controllers.ActivityController.getActivities()
 
 GET     /park/:id                   controllers.ParkController.getPark(id:Integer)
-GET     /parkPicture/:id            controllers.ParkController.getPicture(id:Integer)
+
+# GET     /parkPicture/:id            controllers.ParkController.getPicture(id:Integer)
 
 POST    /parkResults                controllers.ActivityController.postActivitySearchResults()
 

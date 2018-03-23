@@ -24,10 +24,15 @@ libraryDependencies ++= Seq(
 )
 
 libraryDependencies += "org.webjars" % "chartjs" % "2.7.0"
+libraryDependencies += "com.google.maps" % "google-maps-services" % "0.2.6"
+
 
 // Testing libraries for dealing with CompletionStage...
 libraryDependencies += "org.assertj" % "assertj-core" % "3.6.2" % Test
 libraryDependencies += "org.awaitility" % "awaitility" % "2.0.0" % Test
 
+
 // Make verbose tests
 testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))
+
+

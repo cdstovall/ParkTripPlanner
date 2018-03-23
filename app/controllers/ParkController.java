@@ -41,6 +41,7 @@ public class ParkController extends Controller
         return ok(views.html.park.render(park, parkActivities));
     }
 
+    /*
     @Transactional(readOnly = true)
     public Result getPicture(int id)
     {
@@ -52,5 +53,5 @@ public class ParkController extends Controller
 
         return ok(park.getPicture()).as("image/jpg");
     }
-
+*/
 }
