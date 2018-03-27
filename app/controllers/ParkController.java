@@ -1,23 +1,33 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import models.Activity;
+import models.DistanceMatrix;
 import models.Park;
+import play.Logger;
+import play.api.Configuration;
 import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
 
 import javax.inject.Inject;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ParkController extends Controller
 {
     private JPAApi jpaApi;
+    private Configuration configuration;
 
     @Inject
-    public ParkController(JPAApi jpaApi)
+    public ParkController(JPAApi jpaApi, Configuration configuration)
     {
         this.jpaApi = jpaApi;
+        this.configuration = configuration;
     }
 
     @Transactional (readOnly = true)
@@ -38,8 +48,20 @@ public class ParkController extends Controller
                 setParameter("parkId", parkId).
                 getResultList();
 
-        return ok(views.html.park.render(park, parkActivities));
+        String apiKey = getConfValue();
+
+        return ok(views.html.park.render(park, parkActivities, apiKey));
     }
+
+    public String getConfValue()
+    {
+        String value = configuration.underlying().getString("api.google.key");
+
+        return value;
+    }
+
+
+
 
     /*
     @Transactional(readOnly = true)
