@@ -26,6 +26,9 @@ libraryDependencies ++= Seq(
 libraryDependencies += "org.webjars" % "chartjs" % "2.7.0"
 libraryDependencies += "com.google.maps" % "google-maps-services" % "0.2.6"
 
+//Amazon
+libraryDependencies += "com.amazonaws" % "aws-java-sdk" % "1.11.301"
+
 
 // Testing libraries for dealing with CompletionStage...
 libraryDependencies += "org.assertj" % "assertj-core" % "3.6.2" % Test

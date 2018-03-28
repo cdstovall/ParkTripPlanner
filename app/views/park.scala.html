@@ -1,4 +1,5 @@
 @(park : Park, parkActivities : List[Activity], apiKey : String)
+@import helper._
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +35,14 @@
     Park Website: <a href="@park.getWebsite()" @park.getWebsite()>@park.getWebsite()</a>
 </p>
 
-<input type="submit" value="Visit @park.getParkName()">
+<form method="post">
+    @CSRF.formField
+
+    <input type="submit" value="Visit @park.getParkName()">
+
+</form>
+
+
 
 </body>
 </html>

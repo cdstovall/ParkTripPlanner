@@ -4,11 +4,12 @@
 
 # GET     /territories                controllers.TerritoryController.getTerritories
 
-GET     /home                       controllers.ActivityController.getActivities
+GET     /home                       controllers.ParkController.getHome()
 
-GET     /findparks                  controllers.ActivityController.getActivities()
+GET     /findParks                  controllers.ActivityController.getActivities()
 
 GET     /park/:id                   controllers.ParkController.getPark(id:Integer)
+POST    /park/:id                   controllers.ParkController.postSendEmail(id:Integer)
 
 # GET     /parkPicture/:id            controllers.ParkController.getPicture(id:Integer)
 

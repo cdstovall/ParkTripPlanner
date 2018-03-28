@@ -94,7 +94,7 @@ public class ActivityController extends Controller
                 "WHERE pa.activityId IN (:activityIds) " +
                 "GROUP BY p " +
                 "HAVING count(*) = (:activityRequestLength) " +
-                "ORDER BY p.parkId";
+                "ORDER BY p.distance";
 
         //"SELECT a FROM Activity a WHERE ActivityId IN (:activityIds)"
 
@@ -159,64 +159,5 @@ public class ActivityController extends Controller
 
         return value;
     }
-/*
-    public int getDistance()
-    {
-        URL url = new URL();
-        HttpURLConnection request = (HttpURLConnection) url.openConnection();
-        request().connect;
-        //TODO Not sure what the text is for
-        Logger.debug("distance status: " + request.getResponseCode());
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        DistanceMatrix distanceMatrix = objectMapper.readValue(url, DistanceMatrix.class);
-
-        //Gets individual travel results from JSON data
-        Row row = distanceMatrix.getRows().get(0);
-        Element element = row.getElements().get(0);
-
-        Distance distance = element.getDistance();
-        int distanceValue = distance.getValue();
-
-        Duration duration = element.getDuration();
-        String durationText = duration.getText();
-    }
-
-
-    //Retrieve google maps distance api json
-    private Map<String, DistanceMatrix> distances = new HashMap<>();
-
-    public Result getDistance() throws Exception
-    {
-        boolean success = false;
-
-        try
-        {
-            //TODO: Add URL
-            URL url = new URL();
-            HttpURLConnection request = (HttpURLConnection) url.openConnection();
-            request().connect;
-            //TODO Not sure what the text is for
-            Logger.debug("distance status: " + request.getResponseCode());
-
-            ObjectMapper objectMapper = new ObjectMapper();
-            DistanceMatrix distanceMatrix = objectMapper.readValue(url, DistanceMatrix.class);
-
-
-
-            for(DistanceMatrix dm: distanceMatrix.getResults())
-            {
-                System.out.println(dm.getRows().getFirst());
-
-
-                //TODO I don't understand what's happening here in the example code.
-            }
-        }
-        catch(Exception e)
-        {
-            Logger.debug("Unable to get distance matrix.");
-        }
-    }
-    */
 
 }

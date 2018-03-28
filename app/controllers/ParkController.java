@@ -1,9 +1,8 @@
 package controllers;
 
+import Services.Email;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import models.Activity;
-import models.DistanceMatrix;
-import models.Park;
+import models.*;
 import play.Logger;
 import play.api.Configuration;
 import play.db.jpa.JPAApi;
@@ -14,6 +13,7 @@ import play.mvc.Result;
 import javax.inject.Inject;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,6 +53,12 @@ public class ParkController extends Controller
         return ok(views.html.park.render(park, parkActivities, apiKey));
     }
 
+    public Result getHome()
+    {
+        return ok(views.html.home.render());
+    }
+
+
     public String getConfValue()
     {
         String value = configuration.underlying().getString("api.google.key");
@@ -60,6 +66,14 @@ public class ParkController extends Controller
         return value;
     }
 
+    public Result postSendEmail(Integer parkId)
+    {
+        Date date = new Date();
+
+        Email.sendEmail(date);
+
+        return ok("SentEmail");
+    }
 
 
 
