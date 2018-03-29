@@ -11,7 +11,7 @@
 <table>
     @for(park <- parks2){
     <tr>
-        <td><a href="park/@park.getParkId()">@park.getParkName()</a>. Time to drive: @park.getDuration<br></td>
+        <td><a href="park/@park.getParkId()">@park.getParkName()</a>. Time to drive: @park.getDurationText<br></td>
     </tr>
     }
 </table>

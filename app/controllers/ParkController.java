@@ -74,9 +74,7 @@ public class ParkController extends Controller
         Park park = jpaApi.em().createQuery("SELECT p FROM Park p WHERE parkId = :parkId", Park.class).
                 setParameter("parkId", parkId).getSingleResult();
 
-        String apiKey = getConfValue();
-
-        Email.sendEmail(date, park, apiKey);
+        Email.sendEmail(date, park);
 
         //Makes the page re-render, same as the GET
 
@@ -91,6 +89,8 @@ public class ParkController extends Controller
                 createQuery(sql, Activity.class).
                 setParameter("parkId", parkId).
                 getResultList();
+
+        String apiKey = getConfValue();
 
         return ok(views.html.park.render(park, parkActivities, apiKey));
     }

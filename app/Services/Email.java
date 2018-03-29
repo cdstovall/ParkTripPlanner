@@ -11,7 +11,7 @@ import java.util.Date;
 public class Email
 {
 
-    public static void sendEmail(Date date, Park park, String apiKey)
+    public static void sendEmail(Date date, Park park)
     {
         String sender = "cdstovall@gmail.com";
         String receiver = "cdstovall@gmail.com";

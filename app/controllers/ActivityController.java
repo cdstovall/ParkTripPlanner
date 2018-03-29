@@ -93,8 +93,7 @@ public class ActivityController extends Controller
                 "JOIN ParkActivity pa ON pa.parkId = p.parkId " +
                 "WHERE pa.activityId IN (:activityIds) " +
                 "GROUP BY p " +
-                "HAVING count(*) = (:activityRequestLength) " +
-                "ORDER BY p.distance";
+                "HAVING count(*) = (:activityRequestLength)";
 
         //"SELECT a FROM Activity a WHERE ActivityId IN (:activityIds)"
 
@@ -120,15 +119,13 @@ public class ActivityController extends Controller
                 Row row = distanceMatrix.getRows().get(0);
                 Element element = row.getElements().get(0);
 
-                Distance distance = element.getDistance();
-                Integer distanceValue = distance.getValue();
-
                 Duration duration = element.getDuration();
+                Integer durationValue = duration.getValue();
                 String durationText = duration.getText();
 
 
-                park.setDistance(distanceValue);
-                park.setDuration(durationText);
+                park.setDurationValue(durationValue);
+                park.setDurationText(durationText);
                 jpaApi.em().persist(park);
 
             }
@@ -142,7 +139,7 @@ public class ActivityController extends Controller
         String sql2 = "SELECT p " +
                 "FROM Park p " +
                 "WHERE p IN (:parks) " +
-                "ORDER BY p.distance";
+                "ORDER BY p.durationValue";
 
         //"SELECT a FROM Activity a WHERE ActivityId IN (:activityIds)"
 

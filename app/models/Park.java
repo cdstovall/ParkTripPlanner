@@ -15,8 +15,8 @@ public class Park
     private BigDecimal latitude;
     private BigDecimal longitude;
     private String website;
-    private Integer distance;
-    private String duration;
+    private Integer durationValue;
+    private String durationText;
     //private byte[] picture;
 
     public int getParkId()
@@ -49,24 +49,24 @@ public class Park
         return website;
     }
 
-    public Integer getDistance()
+    public Integer getDurationValue()
     {
-        return distance;
+        return durationValue;
     }
 
-    public void setDistance(Integer distance)
+    public void setDurationValue(Integer distance)
     {
-        this.distance = distance;
+        this.durationValue = distance;
     }
 
-    public String getDuration()
+    public String getDurationText()
     {
-        return duration;
+        return durationText;
     }
 
-    public void setDuration(String duration)
+    public void setDurationText(String duration)
     {
-        this.duration = duration;
+        this.durationText = duration;
     }
 
     /*
