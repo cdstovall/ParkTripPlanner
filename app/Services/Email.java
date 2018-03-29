@@ -19,7 +19,7 @@ public class Email
         String subject = "Happy Trails!";
 
         String htmlBody = "Here are the directions for your visit to " + park.getParkName() + ": " +
-                "https://www.google.com/maps/dir/35.090791,-92.442176/" + park.getLatitude() + "," + park.getLongitude();
+                "https://www.google.com/maps/dir/35.090791,-92.4421768/" + park.getLatitude() + "," + park.getLongitude();
 
         String textBody = "" + date;
 

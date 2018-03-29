@@ -106,7 +106,7 @@ public class ActivityController extends Controller
             try
             {
                 URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/" +
-                        "json?units=imperial&origins=35.090791,-92.442176&destinations=" + park.getLatitude() + "," + park.getLongitude() +
+                        "json?units=imperial&origins=35.090791,-92.4421768&destinations=" + park.getLatitude() + "," + park.getLongitude() +
                         "&key=" + getConfValue());
                 HttpURLConnection request = (HttpURLConnection) url.openConnection();
                 request.connect();

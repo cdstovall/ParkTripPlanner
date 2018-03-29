@@ -76,23 +76,7 @@ public class ParkController extends Controller
 
         Email.sendEmail(date, park);
 
-        //Makes the page re-render, same as the GET
-
-        String sql = "SELECT a " +
-                "FROM Activity a " +
-                "JOIN ParkActivity pa ON a.activityId = pa.activityId " +
-                "JOIN Park p ON pa.parkId = p.parkId " +
-                "WHERE p.parkId = (:parkId)";
-
-        List<Activity> parkActivities = jpaApi.
-                em().
-                createQuery(sql, Activity.class).
-                setParameter("parkId", parkId).
-                getResultList();
-
-        String apiKey = getConfValue();
-
-        return ok(views.html.park.render(park, parkActivities, apiKey));
+        return ok(views.html.confirmation.render());
     }
 
 

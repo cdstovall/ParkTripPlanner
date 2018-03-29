@@ -3,6 +3,10 @@
 # ~~~~
 
 # GET     /territories                controllers.TerritoryController.getTerritories
+# GET     /parkPicture/:id            controllers.ParkController.getPicture(id:Integer)
+# GET     /activitychart              controllers.ChartController.getActivityChart()
+# GET     /chart                      controllers.ChartController.getTypeChart()
+
 
 GET     /home                       controllers.ParkController.getHome()
 
@@ -11,12 +15,10 @@ GET     /findParks                  controllers.ActivityController.getActivities
 GET     /park/:id                   controllers.ParkController.getPark(id:Integer)
 POST    /park/:id                   controllers.ParkController.postSendEmail(id:Integer)
 
-# GET     /parkPicture/:id            controllers.ParkController.getPicture(id:Integer)
-
 POST    /parkResults                controllers.ActivityController.postActivitySearchResults()
 
-GET     /activitychart              controllers.ChartController.getActivityChart()
-GET     /chart                      controllers.ChartController.getTypeChart()
+GET     /confirmation               controllers.ParkController.getHome()
+
 
 
 # Map static resources from the /public folder to the /assets URL path
