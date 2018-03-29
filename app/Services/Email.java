@@ -4,21 +4,24 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClientBuilder;
 import com.amazonaws.services.simpleemail.model.*;
+import models.Park;
 
 import java.util.Date;
 
 public class Email
 {
-    public static void sendEmail(Date date)
+
+    public static void sendEmail(Date date, Park park, String apiKey)
     {
         String sender = "cdstovall@gmail.com";
         String receiver = "cdstovall@gmail.com";
 
-        String subject = "Here are the directions for your park visit!";
+        String subject = "Happy Trails!";
 
-        String htmlBody = "<h1>Park Visit</h1><p>" + date + "</p>";
+        String htmlBody = "Here are the directions for your visit to " + park.getParkName() + ": " +
+                "https://www.google.com/maps/dir/35.090791,-92.442176/" + park.getLatitude() + "," + park.getLongitude();
 
-        String textBody = "Park Visit " + date ;
+        String textBody = "" + date;
 
         try
         {

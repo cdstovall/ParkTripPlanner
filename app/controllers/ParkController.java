@@ -66,13 +66,33 @@ public class ParkController extends Controller
         return value;
     }
 
+    @Transactional (readOnly = true)
     public Result postSendEmail(Integer parkId)
     {
         Date date = new Date();
 
-        Email.sendEmail(date);
+        Park park = jpaApi.em().createQuery("SELECT p FROM Park p WHERE parkId = :parkId", Park.class).
+                setParameter("parkId", parkId).getSingleResult();
 
-        return ok("SentEmail");
+        String apiKey = getConfValue();
+
+        Email.sendEmail(date, park, apiKey);
+
+        //Makes the page re-render, same as the GET
+
+        String sql = "SELECT a " +
+                "FROM Activity a " +
+                "JOIN ParkActivity pa ON a.activityId = pa.activityId " +
+                "JOIN Park p ON pa.parkId = p.parkId " +
+                "WHERE p.parkId = (:parkId)";
+
+        List<Activity> parkActivities = jpaApi.
+                em().
+                createQuery(sql, Activity.class).
+                setParameter("parkId", parkId).
+                getResultList();
+
+        return ok(views.html.park.render(park, parkActivities, apiKey));
     }
 
 
