@@ -17,7 +17,7 @@ POST    /park/:id                   controllers.ParkController.postSendEmail(id:
 
 POST    /parkResults                controllers.ActivityController.postActivitySearchResults()
 
-GET     /confirmation               controllers.ParkController.getHome()
+GET     /confirmation               controllers.ParkController.getConfirmationPage()
 
 
 

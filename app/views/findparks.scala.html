@@ -15,24 +15,32 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
 </head>
 <body>
-<h1>What would you like to do?</h1>
+
+<div class="container-fluid">
+    <h1>What would you like to do?</h1><br>
 
 
-<form method="POST" action="parkResults">
-    @CSRF.formField
+    <form method="POST" action="parkResults">
+        @CSRF.formField
 
-<table>
-    @for(activity <- activities){
-    <tr>
-        <td><input type="checkbox" name="activityId[]" value="@activity.getActivityId()">@activity.getActivityName()<br></td>
-    </tr>
-    }
-</table>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                @for(activity <- activities){
+                <div class="col-md-6" id="background">
+                    <input type="checkbox" name="activityId[]" value="@activity.getActivityId()">  @activity.getActivityName()
+                </div>
+                }
+            </div>
+        </div>
 
-    <input type="submit" value="Get Parks">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <input type="submit" class="btn btn-block" value="Get Parks">
+            </div>
+        </div>
 
-</form>
-
+    </form>
+</div>
 
 </body>
 </html>

@@ -79,6 +79,11 @@ public class ParkController extends Controller
         return ok(views.html.confirmation.render());
     }
 
+    public Result getConfirmationPage()
+    {
+        return ok(views.html.confirmation.render());
+    }
+
 
 
     /*
