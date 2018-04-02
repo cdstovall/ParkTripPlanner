@@ -1,0 +1,32 @@
+body {
+   background: linear-gradient(#ffffff, transparent), url("/assets/images/PetitJean.JPG");
+   background-position: center;
+   background-size: cover;
+   background-attachment: fixed;
+}
+
+/* Added  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet"> to <head> */
+h1 {
+font-family: 'Cabin Sketch', cursive;
+font-size: 400%;
+text-align: center;
+text-transform: uppercase;
+color: #663300;
+}
+
+h2 {
+font-family: 'Cabin Sketch', cursive;
+text-align: center;
+text-transform: uppercase;
+color: #006600;
+}
+
+.btn {
+background-color: #ffdd1a;
+}
+
+.table {
+background-color: #ccffcc;
+background-opacity: 0.5;
+color: #006600;
+}
