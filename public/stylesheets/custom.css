@@ -23,15 +23,36 @@ color: #006600;
 
 .btn {
 background-color: #ffdd1a;
+color: #4d2800;
 }
 
 .table {
 background-color: #ccffcc;
 background-opacity: 0.5;
-color: #006600;
+color: #4d2800;
 }
 
 #background {
 background-color: #ccffcc;
-color: #331a00;
+color: #4d2800;
+}
+
+#rightalign {
+text-align: right;
+}
+
+a {
+color: #4d2800;
+}
+
+a:hover {
+    color: #ffdd1a;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
 }

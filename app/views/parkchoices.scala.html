@@ -15,15 +15,34 @@
 </head>
 <body>
 
-<table>
-    @for(park <- parks2){
-    <tr>
-        <td><a href="park/@park.getParkId()">@park.getParkName()</a>. Time to drive: @park.getDurationText<br></td>
-    </tr>
-    }
-</table>
+<div class="container-fluid">
 
+    <h1>Which Park Would You Like To Visit?</h1><br>
 
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Park Name</th>
+                        <th>Drive Time</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                @for(park <- parks2){
+                <tr>
+                    <td><a href="park/@park.getParkId()">@park.getParkName()</a></td>
+                    <td>@park.getDurationText</td>
+                </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div><br><br>
+
+</div>
 
 </body>
 </html>
