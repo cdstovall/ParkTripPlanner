@@ -33,6 +33,9 @@ color: #006600;
 
 img {
     transform: rotate(90deg);
+    border-radius: 50%;
+    border-style: groove;
+    border-color: #4d2800;
 }
 
 /*

@@ -32,7 +32,7 @@ public class ActivityController extends Controller
         this.configuration = configuration;
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public Result getActivities()
     {
         List<Activity> activities = jpaApi.
@@ -41,6 +41,17 @@ public class ActivityController extends Controller
                 .getResultList();
 
         return ok(views.html.findparks.render(activities));
+    }
+
+    @Transactional(readOnly = true)
+    public List getActivitiesList()
+    {
+        List<Activity> activities = jpaApi.
+                em().
+                createQuery("SELECT a FROM Activity a")
+                .getResultList();
+
+        return activities;
     }
 
     //Original, returns parks meeting activity criteria without distance considerations
@@ -79,11 +90,17 @@ public class ActivityController extends Controller
     public Result postActivitySearchResults()
     {
         String activityIds[] = request().body().asFormUrlEncoded().get("activityId[]");
+
+        if (activityIds == null)
+        {
+            return ok(views.html.findparks.render(getActivitiesList()));
+        }
+
         int activityRequestLength = activityIds.length;
         Long requestSize = new Long(activityRequestLength);
         List<Integer> activityIdValues = new ArrayList<>(activityRequestLength);
 
-        for(String activityId : activityIds)
+        for (String activityId : activityIds)
         {
             activityIdValues.add(new Integer(activityId));
         }
@@ -100,7 +117,12 @@ public class ActivityController extends Controller
         List<Park> parks = jpaApi.em().createQuery(sql).setParameter("activityIds", activityIdValues).
                 setParameter("activityRequestLength", requestSize).getResultList();
 
-        for(Park park : parks)
+        if (parks.size() == 0)
+        {
+            return ok(views.html.findparks.render(getActivitiesList()));
+        }
+
+        for (Park park : parks)
         {
 
             try
@@ -128,8 +150,7 @@ public class ActivityController extends Controller
                 park.setDurationText(durationText);
                 jpaApi.em().persist(park);
 
-            }
-            catch (Exception e)
+            } catch (Exception e)
             {
                 Logger.debug("Unable to get distance and duration.");
                 Logger.debug(e.toString());
@@ -144,7 +165,6 @@ public class ActivityController extends Controller
         //"SELECT a FROM Activity a WHERE ActivityId IN (:activityIds)"
 
         List<Park> parks2 = jpaApi.em().createQuery(sql2).setParameter("parks", parks).getResultList();
-
 
         return ok(views.html.parkchoices.render(parks2));
 
